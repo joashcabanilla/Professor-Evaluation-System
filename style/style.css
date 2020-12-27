@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+}
+.csd {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+.login-form {
+  width: 350px;
+  height: 350px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(17, 33, 64, 0.4),
+    rgba(82, 122, 150, 0.4)
+  );
+  box-shadow: 3px 3px 3px #112140;
+  border-radius: 25px;
+}
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  color: #cbcbcb;
+}
+.username {
+  display: flex;
+  justify-content: left;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  background-image: url("../image/username.png");
+  background-position: 10px 5px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  text-indent: 40px;
+}
+.password {
+  display: flex;
+  justify-content: left;
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  background-image: url("../image/password.png");
+  background-position: 10px 10px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  text-indent: 40px;
+}
+.remember-label {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  padding-left: 10px;
+  color: #cbcbcb;
+  border: none;
+  outline: none;
+}
+.remember {
+  margin-top: 15px;
+  border: none;
+  outline: none;
+}
+input[type="checkbox"] {
+  transform: scale(1.5);
+  border: none;
+  outline: none;
+}
+.forgot {
+  color: #54a1c2;
+  padding-left: 10px;
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+.forgot:hover {
+  text-decoration: underline;
+}
+.button {
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: #a2c8d4;
+  margin-left: 15%;
+  width: 200px;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: #112140;
+  cursor: pointer;
+  text-align: center;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.signup {
+  color: #54a1c2;
+  padding-left: 10px;
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+.signup:hover {
+  text-decoration: underline;
+}
+.signup-label {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #cbcbcb;
+  margin-left: 25%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.error-message {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #a94442;
+  display: flex;
+  justify-content: center;
+  background: #f0b2b2;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 884px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 800px;
+    height: 450px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

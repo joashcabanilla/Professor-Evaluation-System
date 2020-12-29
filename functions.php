@@ -51,5 +51,18 @@ elseif($_SESSION['account'] == $user2)
     header("location:student-page.php");
 }
 }
+
+function remember_account()
+{
+    if(!empty($_POST["remember"]))
+            {
+                setcookie("username",$_POST["username"],time()+86400);
+                setcookie("password",$_POST["password"],time()+86400);
+            }
+            else
+            {
+                setcookie("username","");
+                setcookie("password","");
+            }
+}
 ob_end_flush();
-?>

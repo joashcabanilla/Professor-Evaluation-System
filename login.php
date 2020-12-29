@@ -8,6 +8,7 @@ $query = "Select * from user_account Where username = '".$_POST['username']."' a
 $result = mysqli_query($con,$query);
 if(mysqli_num_rows($result) > 0)
 {
+    include 'functions.php';
     while($row = mysqli_fetch_assoc($result))
     {
         $_SESSION['User'] = $_POST['username'];
@@ -15,16 +16,19 @@ if(mysqli_num_rows($result) > 0)
         {
             $_SESSION['account'] = 'professor';
             header("location:professor-page.php");
+            remember_account();
         }
         elseif($row["account_type"] == "admin")
         {
             $_SESSION['account'] = 'admin';
             header("location:admin-page.php");
+            remember_account();
         }
         else
         {
             $_SESSION['account'] = 'student';
             header("location:student-page.php");
+            remember_account();
         }
     }
 }
@@ -34,4 +38,3 @@ else
 }
 }
 ob_end_flush();
-?>

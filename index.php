@@ -20,10 +20,10 @@ include 'header.php';
             <div class="login-form">
                 <form action="login.php" method="POST">
                     <h1>Login</h1>
-                    <input class="username" type="text" placeholder="Username" name="username" required>
-                    <input class="password" type="password" placeholder="Password" name="password" required>
+                    <input class="username" type="text" placeholder="Username" name="username" required value="<?php if(isset($_COOKIE["username"])){echo $_COOKIE["username"];}?>">
+                    <input class="password" type="password" placeholder="Password" name="password" required value="<?php if(isset($_COOKIE["password"])){echo $_COOKIE["password"];}?>">
                     <label class="remember-label">
-                    <input class="remember" type="checkbox" name="remember">     remember me
+                    <input class="remember" type="checkbox" name="remember" <?php if(isset($_COOKIE["username"])){?>checked<?php }?>>     remember me
                     </label>
                     <a class="forgot" href="forgot-password.php">Forgot Passowrd</a></br></br>
                     <button class="button" type="submit" name="login"> LOG IN</button></br>

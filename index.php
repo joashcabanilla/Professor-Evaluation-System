@@ -9,9 +9,10 @@ ob_end_flush();
 ?>
 <!DOCTYPE html>
 <html>
-<?php
-include 'header.php';
-?>
+    <head>
+    <?php include 'header.php'; ?>
+    <link rel="stylesheet" href="style/style.css">
+    </head>
     <body>
         <div class="container">
             <div class="csd">

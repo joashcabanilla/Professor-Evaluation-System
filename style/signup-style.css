@@ -45,7 +45,6 @@ h1 {
   color: #cbcbcb;
 }
 .div-name {
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -64,4 +63,26 @@ h1 {
   background-repeat: no-repeat;
   text-indent: 10px;
   text-transform: capitalize;
+}
+.account-button {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.selected-button {
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: #a2c8d4;
+  font-size: 25px;
+  width: 200px;
+  height: 60px;
+  font-family: "Oswald", sans-serif;
+  color: #112140;
+  cursor: pointer;
+  text-align: center;
+}
+.selected-button:hover {
+  opacity: 0.9;
 }

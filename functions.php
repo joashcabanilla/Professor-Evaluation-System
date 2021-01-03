@@ -5,7 +5,7 @@ function validate_user($account,$url)
 session_start();
 if(!isset($_SESSION['User']))
 {
-     header("location:index.php");
+     header("location:".$_SESSION['page']);
 }  
 else
 {

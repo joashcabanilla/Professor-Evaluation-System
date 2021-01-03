@@ -1,6 +1,8 @@
 <?php
 ob_start();
 session_start();
+setcookie("ERROR","");
+$_SESSION['page'] = "index.php";
 if(isset($_SESSION['url']))
 {
     header("Location:".$_SESSION['url']);
@@ -31,10 +33,10 @@ ob_end_flush();
                     <p class="signup-label">New here?<a class="signup" href="signup.php">Sign Up</a></p>
                     <p class="error-message" name="error-login">
                         <?php
-                        if(@$_GET['Error']==true)
-                        {
-                            echo $_GET['Error'];
-                        }
+                            if(isset($_COOKIE["ERROR"]))
+                            {
+                                echo $_COOKIE["ERROR"];
+                            }
                         ?>
                     </p>
                 </form>

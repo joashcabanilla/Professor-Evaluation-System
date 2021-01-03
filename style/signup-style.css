@@ -7,13 +7,15 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("../image/background.jpg");
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
+  background-blend-mode: darken;
 }
 .container {
   width: 100%;
   height: 100vh;
+  margin-bottom: 200px;
 }
 .csd {
   padding: 10px;
@@ -23,7 +25,6 @@ body {
 }
 .create-form {
   width: 350px;
-  height: 350px;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
@@ -67,7 +68,8 @@ h1 {
 .account-button {
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .selected-button {
   margin-top: 10px;
@@ -85,4 +87,42 @@ h1 {
 }
 .selected-button:hover {
   opacity: 0.9;
+}
+.div-signup {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.error-message {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #a94442;
+  display: flex;
+  justify-content: center;
+  background: #f0b2b2;
+  border-radius: 5px;
+}
+.login-label {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #cbcbcb;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.login {
+  color: #54a1c2;
+  padding-left: 10px;
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+.login:hover {
+  text-decoration: underline;
+}
+.div-login {
+  display: flex;
+  justify-content: center;
 }

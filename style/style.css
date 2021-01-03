@@ -7,13 +7,15 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("../image/background.jpg");
-  background-size: cover;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
+  background-blend-mode: darken;
 }
 .container {
   width: 100%;
   height: 100vh;
+  margin-bottom: 150px;
 }
 .csd {
   padding: 10px;
@@ -163,6 +165,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
   }
   .container {
     width: 800px;
@@ -171,5 +174,6 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
   }
 }

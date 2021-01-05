@@ -34,18 +34,14 @@ if (isset($_POST['signup-button'])) {
     $result = mysqli_query($con, $sql);
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-            if($row["email"] == $email)
-            {
-                $error_message = "YOUR EMAIL ALREADY REGISTERED";
-                error($firstname, $middlename, $lastname, $studentnumber, $email, $username, $password, $confirmpassword, $error_message);
-            }
-            elseif($row["username"] == $username)
-            {
-                $error_message = "YOUR USERNAME ALREADY EXIST";
-                error($firstname, $middlename, $lastname, $studentnumber, $email, $username, $password, $confirmpassword, $error_message);
-            }
-    } 
-    else {
+        if ($row["email"] == $email) {
+            $error_message = "YOUR EMAIL ALREADY REGISTERED";
+            error($firstname, $middlename, $lastname, $studentnumber, $email, $username, $password, $confirmpassword, $error_message);
+        } elseif ($row["username"] == $username) {
+            $error_message = "YOUR USERNAME ALREADY EXIST";
+            error($firstname, $middlename, $lastname, $studentnumber, $email, $username, $password, $confirmpassword, $error_message);
+        }
+    } else {
         $domain = explode("@", $email);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $error_message = "YOUR EMAIL IS INVALID";
@@ -57,7 +53,7 @@ if (isset($_POST['signup-button'])) {
             $error_message = "Those passwords didn't match. Try again.";
             error($firstname, $middlename, $lastname, $studentnumber, $email, $username, $password, $confirmpassword, $error_message);
         } else {
-            $query = "Insert Into user_account(name,username,password,account_type,student_number,email,otp,verification_status) values('$name','$username','$password','$account_type','$studentnumber','$email','$otp','$verification_status')";
+            $query = "Insert Into user_account(name,username,password,account_type,student_number,email,otp,verification_status,fotp) values('$name','$username','$password','$account_type','$studentnumber','$email','$otp','$verification_status','0')";
             mysqli_query($con, $query);
             header("location:verification.php?Email=$email");
             mail($email, "PROFESSOR EVALUATION SYSTEM ACCOUNT VERIFICATION CODE", "USE THIS CODE TO VERIFY YOUR ACCOUNT  " . $otp);

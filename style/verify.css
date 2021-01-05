@@ -89,3 +89,16 @@ h1 {
 .submit:hover {
   opacity: 0.6;
 }
+.error {
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #a94442;
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  background: #f0b2b2;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

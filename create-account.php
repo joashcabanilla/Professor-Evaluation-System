@@ -11,7 +11,7 @@ if (isset($_POST['signup-button'])) {
     $username = $_POST['create-username'];
     $password = $_POST['create-password'];
     $confirmpassword = $_POST['confirm-password'];
-    $name = $lastname . "," . $firstname . " " . $middlename;
+    $name = $lastname . ", " . $firstname . " " . $middlename;
     $account_type = $_COOKIE['account_type'];
     $otp = mt_rand(100000, 999999);
     $verification_status = "false";
@@ -57,6 +57,11 @@ if (isset($_POST['signup-button'])) {
             mysqli_query($con, $query);
             header("location:verification.php?Email=$email");
             mail($email, "PROFESSOR EVALUATION SYSTEM ACCOUNT VERIFICATION CODE", "USE THIS CODE TO VERIFY YOUR ACCOUNT  " . $otp);
+            if($account_type == 'professor')
+            {
+                $sql = "Insert Into profname(name) values('$name')";
+                mysqli_query($con,$sql);
+            }
         }
     }
 }

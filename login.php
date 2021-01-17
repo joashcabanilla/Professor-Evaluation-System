@@ -12,24 +12,43 @@ if(mysqli_num_rows($result) > 0)
     setcookie("ERROR","");
     while($row = mysqli_fetch_assoc($result))
     {
+        $name = $row['name'];
         $_SESSION['User'] = $_POST['username'];
         if($row["account_type"] == "professor")
         {
             $_SESSION['account'] = 'professor';
-            header("location:professor-page.php");
+            header("location:professor-page.php?name=$name");
             remember_account();
         }
-        elseif($row["account_type"] == "admin")
+        elseif($row["account_type"] == "student")
         {
-            $_SESSION['account'] = 'admin';
-            header("location:admin-page.php");
-            remember_account();
+            $number = $row['student_number'];
+            $_SESSION['account'] = 'student';
+            $sql1 = "select * from subject_irregular where student_number = '$number'";
+            $result1 = mysqli_query($con,$sql1);
+            if(mysqli_num_rows($result1) > 0)
+            {
+                header("location:student-page.php?name=$name&studentnumber=$number&submit-irreg-subject=yes");
+                remember_account();
+            }
+            else
+            {
+                header("location:student-page.php?name=$name&studentnumber=$number&submit-irreg-subject=no");
+                remember_account();
+            }
+
         }
         else
         {
-            $_SESSION['account'] = 'student';
-            header("location:student-page.php");
-            remember_account();
+            if($_GET['account'] == "admin")
+            {
+                $_SESSION['account'] = 'admin';
+                header("location:admin-page.php");
+            }
+            else
+            {
+                header("location:index.php");
+            }
         }
     }
 }
@@ -45,8 +64,17 @@ else
     }
     else
     {
-        header("location:index.php");
-        setcookie("ERROR","Incorrect Username or Password",time()+3600);
+        if($_GET['account'] == "admin")
+            {
+                header("location:login-admin.php");
+                setcookie("ERROR","Incorrect Username or Password",time()+3600);
+            }
+            else
+            {
+                header("location:index.php");
+                setcookie("ERROR","Incorrect Username or Password",time()+3600);
+            }
+
     }
 
 }

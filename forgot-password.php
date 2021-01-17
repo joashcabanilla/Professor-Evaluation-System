@@ -2,8 +2,24 @@
 ob_start();
 session_start();
 require_once('database-config.php');
-$_GET['div-form'] = "none";
-$_GET['div-user'] = "none";
+if (isset($_SESSION['url'])) {
+    header("Location:" . $_SESSION['url']);
+}
+if(isset($_GET['resend']))
+{
+    
+    $_GET['div-form'] = "flex";
+    $_GET['div-user'] = "none";
+    $_GET['div-email'] = "none";
+    $_GET['error'] = "RECOVERY CODE IS RESEND TO YOUR EMAIL ";
+    $_GET['style'] = "font-family: 'Heebo', sans-serif;font-size: 15px;text-decoration: none;color: #b2d9b2;display: flex;justify-content: center;width: 320px;background: #59ac59;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;";
+        
+}
+else
+{
+    $_GET['div-form'] = "none";
+    $_GET['div-user'] = "none";
+}
 if(isset($_POST['submit-email']))
 {
     $email = $_POST['email'];
@@ -125,6 +141,9 @@ ob_end_flush();
                 <input class="email" name="code" type="number" placeholder="Enter Code" required>
                 <div class="button">
                     <button class="submit-email" name="submit-code">SUBMIT</button>
+                </div>
+                <div class="button">
+                    <a class="login " href="resend-forgot.php?Email=<?php echo $_SESSION['email'];?>">RESEND CODE</a>
                 </div>
             </form>
         </div>

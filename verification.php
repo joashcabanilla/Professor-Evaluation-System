@@ -2,19 +2,14 @@
 ob_start();
 session_start();
 require_once('database-config.php');
-if (!isset($_SESSION['email'])) {
-    if(isset($_GET['Email']))
-    {
-        $_SESSION['email'] = $_GET['Email'];
-    }
-    else {  
-        header("Location:signup.php");
-    }
+if(!isset($_GET['Email']))
+{
+    header("Location:signup.php");
 }
 if(isset($_POST['submit-code']))
 {
 $code = $_POST['code'];
-$email = $_SESSION['email'];
+$email = $_GET['Email'];
 
 $sql = "Select * From user_account Where otp = '$code' and email = '$email'";
 $result = mysqli_query($con,$sql);
@@ -43,10 +38,10 @@ ob_end_flush();
         </div>
         <div class="message">
             <p class="verify-message">VERIFICATION CODE IS SENT TO YOUR EMAIL</p>
-            <p class="sent-email" name="sent-email"><?php if(isset($_SESSION['email'])){echo $_SESSION['email'];}?></p>
+            <p class="sent-email" name="sent-email"><?php if(isset($_GET['Email'])){echo $_GET['Email'];}?></p>
             <p class="error"><?php if(isset($_GET['error'])){ echo $_GET['error'];}?></p>
         </div>
-        <div class="form">
+        <div class="form">  
         <form action="" method="POST">
             <input class="code" type="text" name="code" placeholder="ENTER VERIFICATION CODE" required>
             <div class="button">
@@ -54,6 +49,9 @@ ob_end_flush();
             </div>
         </form>
         </div>
+    </div>
+    <div class="resend">
+            <a class="resendlink" href="resend-otp.php?Email=<?php if(isset($_GET['Email'])){echo $_GET['Email'];}?>">RESEND VERIFICATION CODE</a>
     </div>
 </body>
 </html>

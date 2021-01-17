@@ -6,9 +6,6 @@ function validate_user($account, $url)
     if (!isset($_SESSION['User'])) {
         header("location:" . $_SESSION['page']);
     } else {
-        echo $_SESSION['User'];
-        echo $_SESSION['account'];
-        echo $account;
         $_SESSION['url'] = $url;
     }
 }

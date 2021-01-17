@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/background_new.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header {
+  padding: 20px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 3px #112140;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.div-content {
+  background: #202020;
+  box-shadow: 3px 3px 3px #112140;
+  flex:5;
+  padding: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  background-image: url("../image/background_new.jpg");
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.div-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.submit {
+  margin-top: 20px;
+  height: 50px;
+}
+.submit {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: #a2c8d4;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: #112140;
+  cursor: pointer;
+  text-align: center;
+}
+.submit:hover {
+  opacity: 0.9;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  color: #cbcbcb;
+  border: 1px solid white;
+}
+td {
+  height: 20px;
+  font-size: 18px;
+  font-family: "Heebo", sans-serif;
+  color: #cbcbcb;
+  border: 1px solid white;
+  text-indent: 10px;
+  text-align: left;
+  padding: 10px;
+}
+.studentnumber {
+  width: 150px;
+}
+.name {
+  width: 400px;
+}
+.th-email {
+  width: 400px;
+}
+.sy {
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+}
+.semester {
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+}
+.view:link,
+.view:visited {
+  background-color: #87cefa;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  border-radius: 10px;
+}
+.view:hover,
+.view:active {
+  background-color: #87cefa;
+  opacity: 0.8;
+}
+.view {
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+}
+h1 {
+  padding: 10px;
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: #cbcbcb;
+}
+.add-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 500px;
+  flex-direction: column;
+}
+.add-input {
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  color: #cbcbcb;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 300px;
+  text-indent: 10px;
+}
+.add-textarea {
+  padding: 10px;
+  font-family: "Heebo", sans-serif;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  width: 300px;
+  text-transform: uppercase;
+}
+.evaluation-date {
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: #cbcbcb;
+}
+.prof-school{
+  font-size: 25px;
+  font-family: "Oswald", sans-serif;
+  color: #cbcbcb;
+}
+.profile{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:100%;
+  flex-direction: column;
+}

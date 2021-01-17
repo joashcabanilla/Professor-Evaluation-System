@@ -102,3 +102,69 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.resend {
+  margin-top: 10px;
+}
+.resendlink {
+  color: #54a1c2;
+  padding-left: 10px;
+  font-family: "Heebo", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+.resendlink:hover {
+  text-decoration: underline;
+}
+.save {
+  margin-top: 20px;
+  height: 30px;
+  width: 200px;
+}
+.save {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background-color: #a2c8d4;
+  font-size: 20px;
+  font-family: "Oswald", sans-serif;
+  color: #112140;
+  cursor: pointer;
+  text-align: center;
+}
+.save:hover {
+  opacity: 0.9;
+}
+.sy {
+  font-family: "Heebo", sans-serif;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 150px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  text-indent: 10px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  padding: 10px;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  color: #cbcbcb;
+  border: 1px solid white;
+}
+td {
+  height: 20px;
+  font-size: 18px;
+  font-family: "Heebo", sans-serif;
+  color: #cbcbcb;
+  border: 1px solid white;
+  text-indent: 10px;
+  text-align: left;
+  padding: 10px;
+}

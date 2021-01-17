@@ -20,10 +20,6 @@ $_SESSION['page'] = "signup.php";
 if (isset($_SESSION['url'])) {
     header("Location:" . $_SESSION['url']);
 }
-if(isset($_SESSION['email']))
-{
-    header("Location:verification.php");
-}
 ob_end_flush();
 ?>
 <!DOCTYPE html>
@@ -47,21 +43,21 @@ ob_end_flush();
                         <button class="selected-button" onclick="professor()">PROFESSOR</button>
                     </div>
                     <div id="account-input" class="div-name" style="display:<?php if(isset($_COOKIE['input-form'])){echo $_COOKIE['input-form'];}else{echo "none";}?>;">
-                        <input class="name" type="text" placeholder="First Name" name="firstname" value = "<?php if(isset($_COOKIE['firstname'])){echo $_COOKIE['firstname'];}?>" pattern="[A-Za-z]{3,100}" title = "Invalid name" required>
+                        <input class="name" type="text" placeholder="First Name" name="firstname" value = "<?php if(isset($_COOKIE['firstname'])){echo $_COOKIE['firstname'];}?>" pattern="[A-Z a-z]{3,100}" title = "Invalid name" required>
 
-                        <input class="name" type="text" placeholder="Middle Name" name="middlename" value = "<?php if(isset($_COOKIE['middlename'])){echo $_COOKIE['middlename'];}?>" pattern="[A-Za-z]{3,100}" title = "Invalid name" required>
+                        <input class="name" type="text" placeholder="Middle Name" name="middlename" value = "<?php if(isset($_COOKIE['middlename'])){echo $_COOKIE['middlename'];}?>" pattern="[A-Z a-z]+" title = "Invalid name" required>
 
-                        <input class="name" type="text" placeholder="Last Name" name="lastname" value = "<?php if(isset($_COOKIE['lastname'])){echo $_COOKIE['lastname'];}?>" pattern="[A-Za-z]{3,100}" title = "Invalid name" required>
+                        <input class="name" type="text" placeholder="Last Name" name="lastname" value = "<?php if(isset($_COOKIE['lastname'])){echo $_COOKIE['lastname'];}?>" pattern="[A-Z a-z]{3,100}" title = "Invalid name" required>
 
                         <input id="studentnumber" class="name" type="number" placeholder="Student Number" name="studentnumber" value = "<?php if(isset($_COOKIE['studentnumber'])){echo $_COOKIE['studentnumber'];}?>" title = "Enter the number only of your studentnumber" style="display:<?php if(isset($_COOKIE['account_type'])){if($_COOKIE['account_type'] == "student"){echo "flex";}else{echo "none";}} ?>;">
 
                         <input class="name" type="email" placeholder="Email" name="email" value = "<?php if(isset($_COOKIE['email'])){echo $_COOKIE['email'];}?>" required style="text-transform: lowercase;">
 
-                        <input class="name" type="text" placeholder="Username" name="create-username" value = "<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>" required style="text-transform: lowercase;">
+                        <input class="name" type="text" placeholder="Username" name="create-username" minlength="5" value = "<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>" required style="text-transform: lowercase;">
 
-                        <input class="name" type="password" placeholder="Password" name="create-password" value = "<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];}?>" required style="text-transform: lowercase;">
+                        <input class="name" type="password" placeholder="Password" name="create-password" minlength="6" value = "<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];}?>" required style="text-transform: lowercase;">
 
-                        <input class="name" type="password" placeholder="Confirm Password" name="confirm-password" value = "<?php if(isset($_COOKIE['confirmpass'])){echo $_COOKIE['confirmpass'];}?>" required style="text-transform: lowercase;">
+                        <input class="name" type="password" placeholder="Confirm Password" name="confirm-password" minlength="6" value = "<?php if(isset($_COOKIE['confirmpass'])){echo $_COOKIE['confirmpass'];}?>" required style="text-transform: lowercase;">
                         <div class="div-signup">
                             <button class="selected-button" type="submit" name="signup-button" style="height: 50px;">SIGN UP</button>
                         </div>
